@@ -35,7 +35,7 @@ header {
 }
 
 header h1 {
-    font-size: .8rem;
+    font-size: .7rem;
     margin: 0;
 }
 
@@ -50,9 +50,20 @@ header button {
 main {
     display: flex;
     justify-content: space-around;
+    align-items: center;
+    padding-top: 5vh;
+}
+
+main h2 {
+    font-size: .9rem;
+    /* margin: 0; */
 }
 
 .box {
+    background-color: rgba(225, 225, 225, .9);
+    width: 35%;
+    height: 45vh;
+    padding: 1.5vw;
 
 }
 
