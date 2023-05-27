@@ -9,38 +9,57 @@ red - #ee5253
 */
 
 html {
-    background: url(assets/burger-friends.jpg) no-repeat center center fixed;
+    background: url(assets/burger-friends.jpg) no-repeat top left fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover; 
     background-size: cover;
-    /* box-sizing: border-box; */
-    border-top: solid #0fb9b1 45px;
+    /* border-top: solid #0fb9b1 45px; */
+    /* border-top: solid #0fb9b1 6vh; */
 }
 
 body {
     min-height: 100vh;
-    font-family: 'Roboto', sans-serif; 
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
 }
 
+header {
+    background-color: #0fb9b1;
+    padding: .5rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
 
-    /* .header {
-        background-color: #0fb9b1;
-        min-height: 3vh;
-        min-width: 100vh;
-        display: flex;
-        align-items: flex-end;
-    } */
-    
+header h1 {
+    font-size: .8rem;
+    margin: 0;
+}
 
+header button {
+    font-size: .5rem;
+    border: none;
+    padding-bottom: 6px;
+    padding-top: 6px;
+    border-radius: 4px;
+}
 
-/* h1 { */
-/* } */
+main {
+    display: flex;
+    justify-content: space-around;
+}
 
+.box {
 
+}
 
+/* header .item {
+    align-items: space-between; 
 
-.button-right
+} */
 
 /* h1 {
     font-size: ;
