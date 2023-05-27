@@ -14,8 +14,34 @@ html {
     -moz-background-size: cover;
     -o-background-size: cover; 
     background-size: cover;
+    /* box-sizing: border-box; */
+    border-top: solid #0fb9b1 45px;
 }
 
-/* body {
+body {
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif; 
+}
+
+
+    /* .header {
+        background-color: #0fb9b1;
+        min-height: 3vh;
+        min-width: 100vh;
+        display: flex;
+        align-items: flex-end;
+    } */
     
+
+
+/* h1 { */
+/* } */
+
+
+
+
+.button-right
+
+/* h1 {
+    font-size: ;
 } */
