@@ -29,23 +29,25 @@ ______________________________________________________
 
 # What's for Dinner? 
 
-### Abstract:
+## Abstract:
 [//]: <> (Briefly describe what you built and its features. What problem is the app solving? How does this application solve that problem?)
 
-### Installation Instructions:
+## Installation Instructions:
 [//]: <> (What steps does a person have to take to get your app cloned down and running?)
 
-### Preview of App:
+## Preview of App:
 [//]: <> (Provide ONE gif or screenshot of your application - choose the "coolest" piece of functionality to show off.)
 
-### Context:
+## Context:
 [//]: <> (Give some context for the project here. How long did you have to work on it? How far into the Turing program are you?)
 
-### Contributors:
+## Contributors:
 [//]: <> (Who worked on this application? Link to their GitHubs.)
 
-### Learning Goals:
+## Learning Goals:
 [//]: <> (What were the learning goals of this project? What tech did you work with?)
 
-### Wins + Challenges:
+## Wins + Challenges:
 [//]: <> (What are 2-3 wins you have from this project? What were some challenges you faced - and how did you get over them?)
+### Setting up the Background Image
+I wanted the image to fill the viewport, regardless of the type of device, and be responsive if the user resized the window for any reason. I did some research and found what I felt was the perfect solution on CSS-Tricks: [Perfect Full Page Background Image](https://css-tricks.com/perfect-full-page-background-image). This 
