@@ -16,6 +16,10 @@ html {
     background-size: cover;
 }
 
+.hidden {
+    display: none!important;
+  }
+
 .star {
     color: #ee5253;
 }
