@@ -10,18 +10,32 @@
       <button>ADD A RECIPE</button>
     </header>
     <main>
-      <div class="box"><h2>What are you looking for?</h2>
-        <ul>
-          <li>Side</li>
+      <div class="box"><h2>What are you looking for?<sup class="star">*</sup></h2>
+        <form>
+          <input type="radio" id="side" name="meal" value="Side">
+          <label for="side">Side</label><br>
+          <input type="radio" id="mainDish" name="meal" value="Main Dish">
+          <label for="mainDish">Main Dish</label><br>
+          <input type="radio" id="dessert" name="meal" value="Dessert">
+          <label for="dessert">Dessert</label><br>
+          <input type="radio" id="entire" name="meal" value="Entire Meal">
+          <label for="entire">Entire Meal</label><br>
+        </form>
+        <!-- <ul>
+          <li input type="radio-button">Side</li>
           <li>Main Dish</li>
           <li>Dessert</li>
           <li>Entire Meal</li>
-        </ul>
-        <button>Let's Cook!</button>
+        </ul> -->
+        <button class="button-cook__main">LET'S COOK!</button>
       </div>
-      <div class="box">
-        <!-- <img src="assets/cookpot.svg" /> -->
-        <p>This is the second div</p>
+      <div class="box div2">
+        <div class="div2a">
+          <img src="assets/cookpot.svg" alt="cooking pot" height="80" width="60" />
+        </div>
+        <div class="div2b">
+          <button class="button-clear__main">CLEAR</button>
+        </div>
       </div>
       
     </main>

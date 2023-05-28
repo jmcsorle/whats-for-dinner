@@ -14,8 +14,10 @@ html {
     -moz-background-size: cover;
     -o-background-size: cover; 
     background-size: cover;
-    /* border-top: solid #0fb9b1 45px; */
-    /* border-top: solid #0fb9b1 6vh; */
+}
+
+.star {
+    color: #ee5253;
 }
 
 body {
@@ -35,16 +37,16 @@ header {
 }
 
 header h1 {
-    font-size: .7rem;
+    font-size: .8rem;
     margin: 0;
 }
 
 header button {
-    font-size: .5rem;
+    font-size: .45rem;
     border: none;
     padding-bottom: 6px;
     padding-top: 6px;
-    border-radius: 4px;
+    border-radius: 3px;
 }
 
 main {
@@ -54,24 +56,49 @@ main {
     padding-top: 5vh;
 }
 
-main h2 {
-    font-size: .9rem;
-    /* margin: 0; */
-}
-
 .box {
     background-color: rgba(225, 225, 225, .9);
     width: 35%;
     height: 45vh;
     padding: 1.5vw;
-
+    
 }
 
-/* header .item {
-    align-items: space-between; 
+main h2 {
+    font-size: .9rem;
+    /* margin: 0; */
+}
 
-} */
+.button-cook__main {
+    font-size: .45rem;
+    background-color: #0fb9b1;
+    padding: 5px 25px;
+    border: none;
+    border-radius: 3px;
+}
 
-/* h1 {
-    font-size: ;
-} */
+.div2 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.div2a {
+    align-self: center;
+}
+
+.div2b {
+    align-self: flex-end;
+}
+
+.button-clear__main {
+    font-size: .45rem;
+    color: #ffffff;
+    background-color: #95a5a6 ;
+    border-radius: 3px;
+    border: none;
+    padding: 5px 7px;
+    align-self: flex-end;
+    justify-content: flex-end;
+}
