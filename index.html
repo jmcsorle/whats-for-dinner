@@ -7,36 +7,57 @@
   <body>
     <header>
       <h1>What's for Dinner?</h1>
-      <button>ADD A RECIPE</button>
+      <button id="addRecipe">ADD A RECIPE</button>
     </header>
     <main>
-      <div class="box"><h2>What are you looking for?<sup class="star">*</sup></h2>
-        <form>
-          <input type="radio" id="side" name="meal" value="Side">
-          <label for="side">Side</label><br>
-          <input type="radio" id="mainDish" name="meal" value="Main Dish">
-          <label for="mainDish">Main Dish</label><br>
-          <input type="radio" id="dessert" name="meal" value="Dessert">
-          <label for="dessert">Dessert</label><br>
-          <input type="radio" id="entire" name="meal" value="Entire Meal">
-          <label for="entire">Entire Meal</label><br>
-        </form>
-        <!-- <ul>
-          <li input type="radio-button">Side</li>
-          <li>Main Dish</li>
-          <li>Dessert</li>
-          <li>Entire Meal</li>
-        </ul> -->
-        <button class="button-cook__main">LET'S COOK!</button>
+      <div class="box">
+        <h2>What are you looking for?<sup class="star">*</sup></h2>
+        <ul id="mealChoices">
+          <li>
+            <input type="radio" id="side" name="meal" value="Side">
+            <label for="side">Side</label>
+          </li>
+          <li>
+            <input type="radio" id="mainDish" name="meal" value="Main Dish">
+            <label for="mainDish">Main Dish</label>
+          </li>
+          <li>
+            <input type="radio" id="dessert" name="meal" value="Dessert">
+            <label for="dessert">Dessert</label>
+          </li>
+          <li>
+            <input type="radio" id="entire" name="meal" value="Entire Meal">
+            <label for="entire">Entire Meal</label>
+          </li>
+        </ul>
+        <button class="button-cook__main" id="letsCook">LET'S COOK!</button>
       </div>
       <div class="box div2">
         <div class="div2a">
-          <img src="assets/cookpot.svg" alt="cooking pot" height="80" width="60" />
+          <img id="cookPot" src="assets/cookpot.svg" alt="cooking pot" height="80" width="60" />
+          <div id="shouldMake" class="hidden">
+            <p><em>You should make:</em></p>
+            <p id="selectedItems">I am hidden.</p>
+          </div>
         </div>
         <div class="div2b">
-          <button class="button-clear__main">CLEAR</button>
+          <button class="button-clear__main" id="clearAll">CLEAR</button>
         </div>
       </div>
+      <!-- <section class="addRecipe">
+        <form>
+          <h2>Add Your Own Recipe</h2>
+          <label for="recipe-category">`${recipeCategory}</label>
+          <input type="text" ???drop-down menu??? name="addRecipe" id="recipe-category" placeholder="Choose recipe category">
+          <label for="recipe-title">`${recipeTitle}`</label>
+          <input type="text" name="addRecipe" id="recipe-title" placeholder="Add the name of the recipe">
+          <label for="add-ingredients">`${ingredients}`</label>
+            <input type="text" name="addRecipe" id="add-ingredients" placeholder="Please list the recipe ingredients here.">
+          <button id="submitButton"></button>
+        </form>
+        <div class="divider"></div>
+        <button class="show-main">Nevermind, take me back!</button>
+      </section> -->
       
     </main>
   </body>
