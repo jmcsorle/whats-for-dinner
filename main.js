@@ -1,16 +1,11 @@
-// ~~~~~~ button query selectors:
+// ~~~~~~ query selectors:
 var addRecipeButton = document.querySelector('#addRecipe');
 var letsCookButton = document.querySelector('#letsCook');
 var clearButton = document.querySelector('#clearAll');
-
-// ~~~~~~ form query selectors:
-
-// ~~~~~~ image query selectors:
 var cookPotImage = document.querySelector('#cookPot');
-
-// ~~~~~~ other query selectors:
 var mealChoiceList = document.querySelector('#mealChoices');
-var shouldMakeDiv = document.querySelector('#shouldMake');
+var shouldMakeItem = document.querySelector('#shouldMake');
+var shouldMakeMeal = document.querySelector('#shouldMakeEntireMeal');
 var selectedItem1 = document.querySelector('#selectedItems');
 var selectedItem2 = document.querySelector('#selectedItems2');
 var selectedItem3 = document.querySelector('#selectedItems3');
@@ -74,11 +69,8 @@ var desserts = [
 var selectedFoodItems = [];
 var foodCategory;
 
-
 // ~~~~~~ event listeners
-// window.addEventListener('load', returnToDefault);
-// addRecipeButton.addEventListener('click', addRecipe);
-letsCookButton.addEventListener('click', displayMeal);
+letsCookButton.addEventListener('click', displaySingleItem);
 clearButton.addEventListener('click', clearSelection);
 sideLi.addEventListener('click', userChoice);
 mainDishLi.addEventListener('click', userChoice);
@@ -93,31 +85,32 @@ function getRandomIndex(array) {
 function userChoice () {
     clearSelection();
     if (sideLi.checked) {
-        randomMealItem = sides[getRandomIndex(sides)];
-        selectedItem1.innerHTML = `${randomMealItem}!`;
+        var randomMealItem = sides[getRandomIndex(sides)];
+        selectedItem1.innerText = `${randomMealItem}!`;
     }
     else if (mainDishLi.checked) {
-        randomMealItem = mainDishes[getRandomIndex(mainDishes)];
-        selectedItem1.innerHTML = `${randomMealItem}!`;
+        var randomMealItem = mainDishes[getRandomIndex(mainDishes)];
+        selectedItem1.innerText = `${randomMealItem}!`;
     }
     else if (dessertLi.checked) {
-        randomMealItem = desserts[getRandomIndex(desserts)];
-        selectedItem1.innerHTML = `${randomMealItem}!`;
+        var randomMealItem = desserts[getRandomIndex(desserts)];
+        selectedItem1.innerText = `${randomMealItem}!`;
     }
-    // else if () {
-    //     randomMealItem = 
-    // }
+}
 
+function displaySingleItem() {
+    hide([cookPotImage]);
+    show([shouldMakeItem]);
 }
 
 function displayMeal() {
     hide([cookPotImage]);
-    show([shouldMakeDiv]);
+    show([shouldMakeMeal]);
   }
 
 function clearSelection() {
     show([cookPotImage]);
-    hide([shouldMakeDiv]);
+    hide([shouldMakeItem]);
 }
 
 function hide(elements) {
@@ -131,44 +124,3 @@ function show(elements) {
         elements[i].classList.remove('hidden');
     }
 }
-
-
-
-//**************************** */
-
-   // else {
-    //     foodCategory = 'You have not selected a Food Category. Please choose a category and then select the \'Let\'s Cook! button.'
-    // }
-    // return foodCategory 
-
-// function returnToDefault () {
-//     //on load and on click, all values will return to default - no radio buttons selected and cookPot image present
-// }
-
-//     function hide(elements) {
-//         for (var i = 0; i < elements.length; i++) {
-//           elements[i].classList.add('hidden');
-//         }
-//       }
-      
-//       function show(elements) {
-//         for (var i = 0; i < elements.length; i++) {
-//           elements[i].classList.remove('hidden');
-//         }
-//       }
-//     //check the radio button to see if it's selected.
-//     //get a random index from the selected array
-//     //hide the cookPot image
-//     //show the "shouldMake" div
-
-// }
-
-// function addRecipe () {
-
-// }
-
-
-
-
-
-
