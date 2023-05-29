@@ -4,11 +4,12 @@ var letsCookButton = document.querySelector('#letsCook');
 var clearButton = document.querySelector('#clearAll');
 var cookPotImage = document.querySelector('#cookPot');
 var mealChoiceList = document.querySelector('#mealChoices');
-var shouldMakeItem = document.querySelector('#shouldMake');
-var shouldMakeMeal = document.querySelector('#shouldMakeEntireMeal');
-var selectedItem1 = document.querySelector('#selectedItems');
-var selectedItem2 = document.querySelector('#selectedItems2');
-var selectedItem3 = document.querySelector('#selectedItems3');
+var make1Item = document.querySelector('#makeItem');
+var makeMeal = document.querySelector('#makeEntireMeal');
+var selectedItem1 = document.querySelector('#selected1Item');
+var mealItem1 = document.querySelector('#randomSideItem');
+var mealItem2 = document.querySelector('#randomMainDish');
+var mealItem3 = document.querySelector('#randomDessert');
 var sideLi = document.querySelector('#side');
 var mainDishLi = document.querySelector('#mainDish');
 var dessertLi = document.querySelector('#dessert');
@@ -67,10 +68,11 @@ var desserts = [
 
 // ~~~~~~ global variables
 var selectedFoodItems = [];
-var foodCategory;
+var selectionCount = 0;
+var selectionID = 0;
 
 // ~~~~~~ event listeners
-letsCookButton.addEventListener('click', displaySingleItem);
+letsCookButton.addEventListener('click', displayUserChoice);
 clearButton.addEventListener('click', clearSelection);
 sideLi.addEventListener('click', userChoice);
 mainDishLi.addEventListener('click', userChoice);
@@ -82,35 +84,50 @@ function getRandomIndex(array) {
     return Math.floor(Math.random() * array.length);
   }
 
+function randomUserChoices () {
+    selectedFoodItems = []
+    var randomMealItem1 = sides[getRandomIndex(sides)];
+    var randomMealItem2 = mainDishes[getRandomIndex(mainDishes)];
+    var randomMealItem3 = desserts[getRandomIndex(desserts)];
+    selectedFoodItems.push(randomMealItem1, randomMealItem2, randomMealItem3);
+}
+
 function userChoice () {
     clearSelection();
-    if (sideLi.checked) {
-        var randomMealItem = sides[getRandomIndex(sides)];
-        selectedItem1.innerText = `${randomMealItem}!`;
+    randomUserChoices();
+    for (var i = 0; i < selectedFoodItems.length; i++) {
+        if (sideLi.checked && i === 0) {
+            selectedItem1.innerText = `${selectedFoodItems[i]}!`;
+        }
+        else if (mainDishLi.checked && i === 1) {
+            selectedItem1.innerText = `${selectedFoodItems[i]}!`;
+        }
+        else if (dessertLi.checked && i === 2) {
+            selectedItem1.innerText = `${selectedFoodItems[i]}!`;
+        }  
     }
-    else if (mainDishLi.checked) {
-        var randomMealItem = mainDishes[getRandomIndex(mainDishes)];
-        selectedItem1.innerText = `${randomMealItem}!`;
-    }
-    else if (dessertLi.checked) {
-        var randomMealItem = desserts[getRandomIndex(desserts)];
-        selectedItem1.innerText = `${randomMealItem}!`;
+    if (entireMealLi.checked) {
+        mealItem1.innerText = `${selectedFoodItems[0]}`;
+        mealItem2.innerText = `${selectedFoodItems[1]}`;
+        mealItem3.innerText = `${selectedFoodItems[0]}`;
     }
 }
 
-function displaySingleItem() {
-    hide([cookPotImage]);
-    show([shouldMakeItem]);
+function displayUserChoice() {
+    if (entireMealLi.checked) {
+        hide([cookPotImage], [make1Item]);
+        show([makeMeal]);
+    }
+    else if (!entireMealLi.checked) {
+        hide([cookPotImage], [makeMeal]);
+        show([make1Item]);
+    }
 }
-
-function displayMeal() {
-    hide([cookPotImage]);
-    show([shouldMakeMeal]);
-  }
 
 function clearSelection() {
     show([cookPotImage]);
-    hide([shouldMakeItem]);
+    hide([make1Item]);
+    hide([makeMeal]);
 }
 
 function hide(elements) {
