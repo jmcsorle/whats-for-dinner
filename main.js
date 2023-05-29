@@ -11,7 +11,9 @@ var cookPotImage = document.querySelector('#cookPot');
 // ~~~~~~ other query selectors:
 var mealChoiceList = document.querySelector('#mealChoices');
 var shouldMakeDiv = document.querySelector('#shouldMake');
-var selectedMealItems = document.querySelector('#selectedItems');
+var selectedItem1 = document.querySelector('#selectedItems');
+var selectedItem2 = document.querySelector('#selectedItems2');
+var selectedItem3 = document.querySelector('#selectedItems3');
 var sideLi = document.querySelector('#side');
 var mainDishLi = document.querySelector('#mainDish');
 var dessertLi = document.querySelector('#dessert');
@@ -70,66 +72,100 @@ var desserts = [
 
 // ~~~~~~ global variables
 var selectedFoodItems = [];
-var currentItems;
+var foodCategory;
+
 
 // ~~~~~~ event listeners
-window.addEventListener('load', returnToDefault);
-addRecipeButton.addEventListener('click', addRecipe);
-letsCookButton.addEventListener('click', displaySelected)
-clearButton.addEventListener('click', defaultPage)
-
+// window.addEventListener('load', returnToDefault);
+// addRecipeButton.addEventListener('click', addRecipe);
+letsCookButton.addEventListener('click', displayMeal);
+clearButton.addEventListener('click', clearSelection);
+sideLi.addEventListener('click', userChoice);
+mainDishLi.addEventListener('click', userChoice);
+dessertLi.addEventListener('click', userChoice);
+entireMealLi.addEventListener('click', userChoice);
 
 // ~~~~~~ functions
-function getRandomIndex(foodCategory) {
-    return Math.floor(Math.random()) * foodCategory.length
+function getRandomIndex(array) {
+    return Math.floor(Math.random() * array.length);
+  }
+
+function userChoice () {
+    clearSelection();
+    if (sideLi.checked) {
+        randomMealItem = sides[getRandomIndex(sides)];
+        selectedItem1.innerHTML = `${randomMealItem}!`;
+    }
+    else if (mainDishLi.checked) {
+        randomMealItem = mainDishes[getRandomIndex(mainDishes)];
+        selectedItem1.innerHTML = `${randomMealItem}!`;
+    }
+    else if (dessertLi.checked) {
+        randomMealItem = desserts[getRandomIndex(desserts)];
+        selectedItem1.innerHTML = `${randomMealItem}!`;
+    }
+    // else if () {
+    //     randomMealItem = 
+    // }
+
 }
 
-function currentItem(foodCategory) {
-    return {
-        id: Date.now(),
-        foodCategory: foodCategory,
-        foodChoice: foodCategory[getRandomIndex(foodCategory)]
+function displayMeal() {
+    hide([cookPotImage]);
+    show([shouldMakeDiv]);
+  }
+
+function clearSelection() {
+    show([cookPotImage]);
+    hide([shouldMakeDiv]);
+}
+
+function hide(elements) {
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].classList.add('hidden');
     }
 }
-
-function returnToDefault () {
-    //on load and on click, all values will return to default - no radio buttons selected and cookPot image present
-}
-
-function displaySelected () {
-    var selectedFood = 0
-    if (sidesLi.checked) {
-        currentItem(sides);
-        selectedFood = 1
-
-        //if entire meal, run currentMeal function 3 times calling each of the arrays
-
-//new if outside of current if would check if selectedFood = 1 - if not, it would put an error message that says - you have not selected a food category
-
-        }
-    }
-
-    function hide(elements) {
-        for (var i = 0; i < elements.length; i++) {
-          elements[i].classList.add('hidden');
-        }
-      }
       
-      function show(elements) {
-        for (var i = 0; i < elements.length; i++) {
-          elements[i].classList.remove('hidden');
-        }
-      }
-    //check the radio button to see if it's selected.
-    //get a random index from the selected array
-    //hide the cookPot image
-    //show the "shouldMake" div
-
+function show(elements) {
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].classList.remove('hidden');
+    }
 }
 
-function addRecipe () {
 
-}
+
+//**************************** */
+
+   // else {
+    //     foodCategory = 'You have not selected a Food Category. Please choose a category and then select the \'Let\'s Cook! button.'
+    // }
+    // return foodCategory 
+
+// function returnToDefault () {
+//     //on load and on click, all values will return to default - no radio buttons selected and cookPot image present
+// }
+
+//     function hide(elements) {
+//         for (var i = 0; i < elements.length; i++) {
+//           elements[i].classList.add('hidden');
+//         }
+//       }
+      
+//       function show(elements) {
+//         for (var i = 0; i < elements.length; i++) {
+//           elements[i].classList.remove('hidden');
+//         }
+//       }
+//     //check the radio button to see if it's selected.
+//     //get a random index from the selected array
+//     //hide the cookPot image
+//     //show the "shouldMake" div
+
+// }
+
+// function addRecipe () {
+
+// }
 
 
 

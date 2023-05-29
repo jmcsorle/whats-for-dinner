@@ -89,6 +89,8 @@ main {
 
 main h2 {
     font-size: .9rem;
+    margin-top: 1.5em;
+    margin-left: 0.5em;
     /* margin: 0; */
 }
 
@@ -98,6 +100,7 @@ main h2 {
     padding: 5px 25px;
     border: none;
     border-radius: 3px;
+    margin-left: .8em;
 }
 
 .div2 {
@@ -110,11 +113,27 @@ main h2 {
 
 .div2a {
     margin-top: auto;
+    
 }
 
 .div2b {
     align-self: flex-end;
     margin-top: auto;
+}
+
+#introText {
+    font-size: 0.7rem;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.selected {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 .button-clear__main {
