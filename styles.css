@@ -8,46 +8,12 @@ red - #ee5253
 
 */
 
-html {
-    background: url(assets/burger-friends.jpg) no-repeat top left fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover; 
-    background-size: cover;
-}
-
 .hidden {
     display: none!important;
   }
 
 .star {
     color: #ee5253;
-}
-
-#mealChoices {
-    list-style: none;
-    margin-left: 0;
-    padding-left: 0;
-}
-
-#mealChoices li {
-    margin-bottom: .5rem;
-    font-size: .6rem;
-}
-
-#mealChoices input[type="radio"] {
-    -ms-transform: scale(.6); /* IE 9 */
-    -webkit-transform: scale(.6); /* Chrome, Safari, Opera */
-    transform: scale(.6);
-    vertical-align: middle;
-    margin-top: -.5px;
-}
-
-body {
-    min-height: 100vh;
-    font-family: 'Roboto', sans-serif;
-    padding: 0;
-    margin: 0;
 }
 
 header {
@@ -72,6 +38,40 @@ header button {
     border-radius: 3px;
 }
 
+body {
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
+    background: url(assets/burger-friends.jpg) no-repeat top left fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover; 
+    background-size: cover;
+}
+
+#mealChoices {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+    margin-top: .75em;
+    margin-bottom: .4em;
+}
+
+#mealChoices li {
+    margin-top: .8em;
+    font-size: .7rem;
+}
+
+#mealChoices input[type="radio"] {
+    -ms-transform: scale(.6); /* IE 9 */
+    -webkit-transform: scale(.6); /* Chrome, Safari, Opera */
+    transform: scale(.6);
+    vertical-align: middle;
+    margin-top: -.5px;
+}
+
+
 main {
     display: flex;
     justify-content: space-around;
@@ -81,23 +81,24 @@ main {
 
 .box {
     background-color: rgba(225, 225, 225, .9);
-    width: 35%;
-    height: 45vh;
+    width: 33%;
+    height: 46vh;
     padding: 1.5vw;
     
 }
 
 main h2 {
-    font-size: .9rem;
-    margin-top: 1.5em;
+    font-size: 1rem;
+    font-weight:bold;
+    margin-top: 1em;
     margin-left: 0.5em;
-    /* margin: 0; */
+    margin-bottom: 1em;
 }
 
 .button-cook__main {
-    font-size: .45rem;
+    font-size: .55rem;
     background-color: #0fb9b1;
-    padding: 5px 25px;
+    padding: 5px 30px;
     border: none;
     border-radius: 3px;
     margin-left: .8em;
@@ -121,11 +122,23 @@ main h2 {
     margin-top: auto;
 }
 
-#introText {
+.introTextItem {
     font-size: 0.7rem;
     margin: 0;
     padding: 0;
     text-align: center;
+}
+
+.introTextMeal{
+    font-size: 0.7rem;
+    margin: 0;
+    text-align: center;
+    padding: 1em;
+}
+
+.mealBody {
+    margin: 0;
+    padding: 0;
 }
 
 .selectedItem {
@@ -145,10 +158,10 @@ main h2 {
 }
 
 .button-clear__main {
-    font-size: .45rem;
+    font-size: .6rem;
     color: #ffffff;
     background-color: #95a5a6 ;
     border-radius: 3px;
     border: none;
-    padding: 5px 7px;
+    padding: 5px 10px;
 }
