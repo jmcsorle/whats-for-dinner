@@ -109,7 +109,7 @@ function userChoice () {
     if (entireMealLi.checked) {
         mealItem1.innerText = `${selectedFoodItems[0]}`;
         mealItem2.innerText = `${selectedFoodItems[1]}`;
-        mealItem3.innerText = `${selectedFoodItems[0]}`;
+        mealItem3.innerText = `${selectedFoodItems[2]}`;
     }
 }
 
